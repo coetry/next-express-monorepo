@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "next-express-monorepo",
+  "builds": [
+    { "src": "backend/**/*.js", "use": "@now/node" },
+    { "src": "frontend/package.json", "use": "@now/next" }
+  ],
+  "routes": [
+    { "src": "/backend/(.*)", "dest": "backend/$1" },
+    { "src": "/(.*)", "dest": "frontend/$1" }
+  ]
+}
